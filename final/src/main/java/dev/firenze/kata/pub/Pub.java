@@ -20,10 +20,16 @@ public class Pub {
     for (int i = 0; i < beers.length; i++) {
       Beer beer = beers[i];
 
-      if (beer.getName().equals("royal ipa")) {
-        beer.setQuality(beer.getQuality() - 1);
-      } else {
-        beer.setQuality(beer.getQuality() - 2);
+      switch (beer.getName()) {
+        case "royal ipa":
+          updateIpaQuality(beer);
+          break;
+        case "belgian trappist tripel":
+          updateTripelQuality(beer);
+          break;
+        default:
+          updateBeerQuality(beer);
+          break;
       }
     }
 
@@ -55,6 +61,18 @@ public class Pub {
         }
       }
     }
+  }
+
+  private void updateIpaQuality(Beer beer) {
+    beer.setQuality(beer.getQuality() - 1);
+  }
+
+  private void updateTripelQuality(Beer beer) {
+
+  }
+
+  private void updateBeerQuality(Beer beer) {
+    beer.setQuality(beer.getQuality() - 2);
   }
 
   /**
