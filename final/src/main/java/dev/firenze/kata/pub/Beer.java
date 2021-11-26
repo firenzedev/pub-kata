@@ -31,6 +31,10 @@ public class Beer {
   }
 
   public int getDiscount() {
+    if (getQuality() <= 10) {
+      return 50;
+    }
+
     return 0;
   }
 
