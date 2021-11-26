@@ -180,4 +180,18 @@ class PubTest {
     assertNull(pub.getDiscounts().get("barrel aged barley wine"));
     assertNull(pub.getDiscounts().get("belgian trappist tripel"));
   }
+
+  @Test
+  void craftBeerWithQualityLessThan20Have35PercentDiscount() {
+    Beer[] beers = new Beer[]{
+        new Beer("special premium craft beer", 24)
+    };
+
+    Pub pub = new Pub(beers);
+
+    pub.dayPassed();
+
+    assertEquals(35, pub.getDiscounts().get("special premium craft beer"));
+  }
+
 }
