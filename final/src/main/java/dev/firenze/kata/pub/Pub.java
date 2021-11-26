@@ -19,27 +19,7 @@ public class Pub {
     // Update quality of the beers
     for (int i = 0; i < beers.length; i++) {
       Beer beer = beers[i];
-      // royal ipa
-      if (beer.getName().equals("royal ipa")) {
-        if (beer.getQuality() > 0) {
-          beer.setQuality(beer.getQuality() - 1);
-        }
-      } else {
-        if (!beer.getName().equals("belgian trappist tripel")) {
-          if (beer.getName().equals("barrel aged barley wine")) {
-            if (beer.getQuality() < 200) {
-              beer.setQuality(beer.getQuality() + 1);
-            }
-          } else {
-            if (beer.getQuality() > 1) {
-              // Decrement quality
-              beer.setQuality(beer.getQuality() - 2);
-            } else if (beer.getQuality() > 0) {
-              beer.setQuality(beer.getQuality() - 1);
-            }
-          }
-        }
-      }
+      beer.setQuality(beer.getQuality() - 2);
     }
 
     for (int i = 0; i < beers.length; i++) {
