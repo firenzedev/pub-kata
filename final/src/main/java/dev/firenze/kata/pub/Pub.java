@@ -1,5 +1,6 @@
 package dev.firenze.kata.pub;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +10,7 @@ public class Pub {
   private Map<String, Integer> discounts;
 
   public Pub(Beer[] beers) {
-    this.beers = beers;
+    this.beers = Arrays.stream(beers).map(BeerFactory::create).toArray(Beer[]::new);
     this.discounts = new HashMap<>();
   }
 
@@ -17,12 +18,8 @@ public class Pub {
     // Another day has passed
 
     // Update quality of the beers
-    for (int i = 0; i < beers.length; i++) {
-      Beer beer = beers[i];
-
-      Beer currentBeer = BeerFactory.create(beer);
-      currentBeer.updateQuality();
-      beers[i] = currentBeer;
+    for (Beer beer : beers) {
+      beer.updateQuality();
     }
 
     for (int i = 0; i < beers.length; i++) {
