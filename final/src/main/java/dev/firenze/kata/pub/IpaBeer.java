@@ -12,4 +12,12 @@ public class IpaBeer extends Beer {
     }
   }
 
+  public int getDiscount() {
+    if (getQuality() <= 5) {
+      return 20;
+    }
+
+    return 0;
+  }
+
 }
