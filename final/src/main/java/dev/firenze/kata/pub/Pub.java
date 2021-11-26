@@ -67,7 +67,9 @@ public class Pub {
   }
 
   private void updateIpaQuality(Beer beer) {
-    beer.setQuality(beer.getQuality() - 1);
+    if (beer.getQuality() > 0) {
+      beer.setQuality(beer.getQuality() - 1);
+    }
   }
 
   private void updateTripelQuality(Beer beer) {
@@ -75,11 +77,17 @@ public class Pub {
   }
 
   private void updateBeerQuality(Beer beer) {
-    beer.setQuality(beer.getQuality() - 2);
+    if (beer.getQuality() > 1) {
+      beer.setQuality(beer.getQuality() - 2);
+    } else {
+      beer.setQuality(0);
+    }
   }
 
   private void updateBarleyWineQuality(Beer beer) {
-    beer.setQuality(beer.getQuality() + 1);
+    if (beer.getQuality() < 200) {
+      beer.setQuality(beer.getQuality() + 1);
+    }
   }
 
   /**
