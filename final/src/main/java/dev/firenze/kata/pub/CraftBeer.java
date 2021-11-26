@@ -14,4 +14,12 @@ public class CraftBeer extends Beer {
     }
   }
 
+  public int getDiscount() {
+    if (getQuality() <= 20) {
+      return 35;
+    }
+
+    return 0;
+  }
+
 }
