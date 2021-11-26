@@ -73,6 +73,24 @@ class PubTest {
   }
 
   @Test
+  void craftBeerQualityDecreasesBy4EveryDay() {
+    Beer[] beers = new Beer[] {
+        new Beer("special premium craft beer", 10)
+    };
+
+    Pub pub = new Pub(beers);
+
+    pub.dayPassed();
+    assertEquals(6, pub.getBeers()[0].getQuality());
+
+    pub.dayPassed();
+    assertEquals(2, pub.getBeers()[0].getQuality());
+
+    pub.dayPassed();
+    assertEquals(0, pub.getBeers()[0].getQuality());
+  }
+
+  @Test
   void qualityCannotBeLessThanZero() {
     Beer[] beers = new Beer[]{
         new Beer("bohemian lager", 1),
