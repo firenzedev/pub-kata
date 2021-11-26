@@ -10,4 +10,8 @@ public class TripelBeer extends Beer {
 
   }
 
+  public int getDiscount() {
+    return 0;
+  }
+
 }
