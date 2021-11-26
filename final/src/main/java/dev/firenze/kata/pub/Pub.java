@@ -19,7 +19,12 @@ public class Pub {
     // Update quality of the beers
     for (int i = 0; i < beers.length; i++) {
       Beer beer = beers[i];
-      beer.setQuality(beer.getQuality() - 2);
+
+      if (beer.getName().equals("royal ipa")) {
+        beer.setQuality(beer.getQuality() - 1);
+      } else {
+        beer.setQuality(beer.getQuality() - 2);
+      }
     }
 
     for (int i = 0; i < beers.length; i++) {
