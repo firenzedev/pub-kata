@@ -7,7 +7,8 @@ public class BeerFactory {
   private static final Map<String, Class<? extends Beer>> SPECIAL_BEERS = Map.of(
       "royal ipa", IpaBeer.class,
       "belgian trappist tripel", TripelBeer.class,
-      "barrel aged barley wine", BarleyWineBeer.class
+      "barrel aged barley wine", BarleyWineBeer.class,
+      "special premium craft beer", CraftBeer.class
   );
 
   public static Beer create(Beer beer) {
