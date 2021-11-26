@@ -1,5 +1,8 @@
 # The Pub kata
 
+- [versione iniziale](./initial)
+- [versione finale](./final)
+
 ## Descrizione
 
 Abbiamo creato un software per gestire il nostro pub virtuale.
