@@ -15,29 +15,15 @@ public class Pub {
   }
 
   public void dayPassed() {
-    // Another day has passed
-
-    // Update quality of the beers
+    discounts = new HashMap<>();
     for (Beer beer : beers) {
       beer.updateQuality();
-    }
-
-    for (int i = 0; i < beers.length; i++) {
-      Beer beer = beers[i];
-
       if (beer.getDiscount() > 0) {
         discounts.put(beer.getName(), beer.getDiscount());
-      } else {
-        discounts.remove(beer.getName());
       }
     }
   }
 
-  /**
-   * Get beers
-   *
-   * @return list of beers
-   */
   public Beer[] getBeers() {
     return beers;
   }
