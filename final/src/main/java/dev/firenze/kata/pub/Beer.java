@@ -30,4 +30,8 @@ public class Beer {
     }
   }
 
+  public int getDiscount() {
+    return 0;
+  }
+
 }
