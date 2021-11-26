@@ -22,4 +22,12 @@ public class Beer {
     this.quality = quality;
   }
 
+  public void updateQuality() {
+    if (getQuality() > 1) {
+      setQuality(getQuality() - 2);
+    } else {
+      setQuality(0);
+    }
+  }
+
 }

@@ -22,16 +22,24 @@ public class Pub {
 
       switch (beer.getName()) {
         case "royal ipa":
-          updateIpaQuality(beer);
+          Beer ipaBeer = new IpaBeer(beer.getName(), beer.getQuality());
+          ipaBeer.updateQuality();
+          beers[i] = ipaBeer;
           break;
         case "belgian trappist tripel":
-          updateTripelQuality(beer);
+          Beer tripelBeer = new TripelBeer(beer.getName(), beer.getQuality());
+          tripelBeer.updateQuality();
+          beers[i] = tripelBeer;
           break;
         case "barrel aged barley wine":
-          updateBarleyWineQuality(beer);
+          Beer barleyWineBeer = new BarleyWineBeer(beer.getName(), beer.getQuality());
+          barleyWineBeer.updateQuality();
+          beers[i] = barleyWineBeer;
           break;
         default:
-          updateBeerQuality(beer);
+          Beer commonBeer = new Beer(beer.getName(), beer.getQuality());
+          commonBeer.updateQuality();
+          beers[i] = commonBeer;
           break;
       }
     }
@@ -63,30 +71,6 @@ public class Pub {
           }
         }
       }
-    }
-  }
-
-  private void updateIpaQuality(Beer beer) {
-    if (beer.getQuality() > 0) {
-      beer.setQuality(beer.getQuality() - 1);
-    }
-  }
-
-  private void updateTripelQuality(Beer beer) {
-
-  }
-
-  private void updateBeerQuality(Beer beer) {
-    if (beer.getQuality() > 1) {
-      beer.setQuality(beer.getQuality() - 2);
-    } else {
-      beer.setQuality(0);
-    }
-  }
-
-  private void updateBarleyWineQuality(Beer beer) {
-    if (beer.getQuality() < 200) {
-      beer.setQuality(beer.getQuality() + 1);
     }
   }
 
