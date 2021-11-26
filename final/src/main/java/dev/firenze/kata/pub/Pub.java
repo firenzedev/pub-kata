@@ -27,6 +27,9 @@ public class Pub {
         case "belgian trappist tripel":
           updateTripelQuality(beer);
           break;
+        case "barrel aged barley wine":
+          updateBarleyWineQuality(beer);
+          break;
         default:
           updateBeerQuality(beer);
           break;
@@ -73,6 +76,10 @@ public class Pub {
 
   private void updateBeerQuality(Beer beer) {
     beer.setQuality(beer.getQuality() - 2);
+  }
+
+  private void updateBarleyWineQuality(Beer beer) {
+    beer.setQuality(beer.getQuality() + 1);
   }
 
   /**
