@@ -20,28 +20,24 @@ public class Pub {
     for (int i = 0; i < beers.length; i++) {
       Beer beer = beers[i];
 
+      Beer currentBeer;
       switch (beer.getName()) {
         case "royal ipa":
-          Beer ipaBeer = new IpaBeer(beer.getName(), beer.getQuality());
-          ipaBeer.updateQuality();
-          beers[i] = ipaBeer;
+          currentBeer = new IpaBeer(beer.getName(), beer.getQuality());
           break;
         case "belgian trappist tripel":
-          Beer tripelBeer = new TripelBeer(beer.getName(), beer.getQuality());
-          tripelBeer.updateQuality();
-          beers[i] = tripelBeer;
+          currentBeer = new TripelBeer(beer.getName(), beer.getQuality());
           break;
         case "barrel aged barley wine":
-          Beer barleyWineBeer = new BarleyWineBeer(beer.getName(), beer.getQuality());
-          barleyWineBeer.updateQuality();
-          beers[i] = barleyWineBeer;
+          currentBeer = new BarleyWineBeer(beer.getName(), beer.getQuality());
           break;
         default:
-          Beer commonBeer = new Beer(beer.getName(), beer.getQuality());
-          commonBeer.updateQuality();
-          beers[i] = commonBeer;
+          currentBeer = new Beer(beer.getName(), beer.getQuality());
           break;
       }
+
+      currentBeer.updateQuality();
+      beers[i] = currentBeer;
     }
 
     for (int i = 0; i < beers.length; i++) {
